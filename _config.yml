@@ -14,7 +14,7 @@ timezone: Australia/Melbourne
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Rajeev Jawaji # the main title
 
 tagline: Student | Programmer # it will display as the sub-title
 
@@ -63,8 +63,8 @@ analytics:
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
+    id: e5637392-0cb2-48fc-8d18-def474beb0c3
+    domain: umami.jawaji.com
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
@@ -117,10 +117,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: burnthoney/burnthoney.github.io
+    repo_id: R_kgDOMZZNtQ
+    category: General
+    category_id: DIC_kwDOMZZNtc4CheMY
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
