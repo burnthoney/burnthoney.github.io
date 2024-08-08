@@ -1,9 +1,8 @@
 ---
 layout: post
 title: managing multiple git accounts with ssh keys
-category:
-- git
-- ssh
+category: git
+tags: ["git", "ssh-keys", "multiple accounts", "GitHub", "BitBucket", "Gitlab", "Gitea"]
 date: 2024-08-08 12:56 +1000
 ---
 # The problem 
