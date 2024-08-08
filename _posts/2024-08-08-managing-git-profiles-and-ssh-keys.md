@@ -64,7 +64,7 @@ path = "~/.gitconfig.university"
 > Make sure your gitDir path ends with a `/` otherwise your config will not load 
 {: .prompt-info }
 
-## Step 3: Configure you git profiles
+## Step 3: Configure your git profiles
 ```toml
 [user]
 email = "your_personal_email"
