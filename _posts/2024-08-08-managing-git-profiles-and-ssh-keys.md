@@ -7,9 +7,11 @@ category:
 date: 2024-08-08 12:56 +1000
 ---
 # The problem 
-Recently I've had to make another GitHub account for university and to make things easier I wanted to make use of ssh key's like I do with my current account. 
-However, it turns out when you use the same provider for git (GitHub in my case) git has trouble deciding what ssh key to use.
-After scouring the web the first method that was suggested to me was to edit my .ssh config and create a host for each account e.g
+Recently, I needed to create a separate GitHub account for university. To streamline my workflow, I wanted to use SSH 
+keys, just like with my existing account. However, I quickly discovered that Git has difficulty determining which SSH 
+key to use when both accounts are on the same platform (GitHub in this case). After some research, I found that the most 
+prominent solution was to edit the .ssh/config file and create a unique host configuration for each account. Similar to
+the example below.
 ```text
 Host github.com-personal
   User git
@@ -22,13 +24,15 @@ Host github.com-university
   IdentityFile ~/.ssh/<university_ssh_key>
 ```
 {: file='~/.ssh/config' }
-But now everytime we clone our repository we have to do `git clone git@github.com-personal:username/repository` which seems pretty tedious especially 
-since it means everytime we copy the clone url we have to edit it instead of just running it in your terminal of choice.
-I also normally sign my commits with my ssh key so other people can be sure that the commits came from me and not someone who got access to my account. 
+Now, every time we clone a repository, we have to use a command like `git clone git@github.com-personal:username/repository`. 
+This process is tedious because it requires editing the clone URL each time instead of simply running it in the terminal. 
+Additionally, I usually sign my commits with my SSH key to ensure that others can verify the commits are genuinely from 
+me and not from someone with unauthorized access to my account
 
 # The Solution
-Here comes git profile to the rescue. By making use of conditional imports via `includeif` based on the directory. Git profiles let the user load a specific config into the main config. 
-To make things even better you can override the ssh command to use a specific ssh key which is exactly what I'm going to be doing.
+This is where Git profiles come to the rescue. By using conditional imports with includeIf based on the directory, Git 
+profiles allow you to load a specific configuration into your main config file. Even better, you can override the SSH 
+command to use a designated SSH key—exactly what I’ll be doing.
 
 ## Step: 1 Create Your SSH keys
 ```bash
@@ -91,10 +95,11 @@ user.name=your_name
 user.email=your_personal_email
 user.signingkey=your_signing_key
 ```
-Your output should now hopefully contain those lines.
+Your output should now hopefully contain something similar to those lines. Make sure that the `user.email` matches
+the email set for your profile, which should be your personal_email in this scenario.
 
 ## Troubleshooting Tips
-- Verify whether your ssh works by doing `ssh -i ~/.ssh/<ssh_key> git@<provider>.com` where provider is something like Github or bitbucket
-- Make sure your gitDir ends with a slash e.g `"gitDir:~/Development/<folder>/"`
-- Verify whether you are in the expected directory e.g /Development/personal for personal projects
-If you still have problem feel free to leave a comment below.
+- Verify your SSH setup by running `ssh -i ~/.ssh/<ssh_key> git@<provider>.com` (replace <provider> with GitHub, Bitbucket , etc.).
+- Ensure your gitDir ends with a slash, e.g., `"gitDir:~/Development/<folder>/"`.
+- Double-check that you're in the correct directory, such as /Development/personal for personal projects.
+If issues persist, feel free to leave a comment below.
