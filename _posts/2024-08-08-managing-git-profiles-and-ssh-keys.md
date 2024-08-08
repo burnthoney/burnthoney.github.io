@@ -39,7 +39,7 @@ $ ssh-keygen -t ed25519 -C "personal@example.com"
 $ ssh-keygen -t ed25519 -C "university@example.com"
 ```
 
-## Step: 2 Setup directory based git profiles
+## Step: 2 Setting Up Your Git Config
 Edit your `.gitconfig` file to something like this
 ```toml
 # Global settings go here
@@ -64,7 +64,7 @@ path = "~/.gitconfig.university"
 > Make sure your gitDir path ends with a `/` otherwise your config will not load 
 {: .prompt-info }
 
-## Step 3: Configure your git profiles
+## Step 3: Create And Configure Your Git Profiles
 ```toml
 [user]
 email = "your_personal_email"
@@ -86,7 +86,7 @@ sshCommand = "ssh -i ~/.ssh/<sshkey>"
 > If you're using 1 password like I am to manage your ssh keys. Download your public key and point your command to use that instead.
 {: .prompt-warning }
 
-## Step 4: Verify your config
+## Step 4: Verify Your Profiles
 ```bash
 ~> cd Development/personal
 ~/Development/personal> git config -l
