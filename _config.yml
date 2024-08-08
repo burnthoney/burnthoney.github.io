@@ -64,7 +64,7 @@ analytics:
     id: # fill in your GoatCounter ID
   umami:
     id: e5637392-0cb2-48fc-8d18-def474beb0c3
-    domain: umami.jawaji.com
+    domain: https://umami.jawaji.com
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
